@@ -2,7 +2,7 @@ import { useState } from "react";
 import logo from "../assets/appLogo.svg";
 import icon from "../assets/veggie menu icon.webp";
 import { FaTimes } from "react-icons/fa"; // Close Icon
-import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -13,17 +13,17 @@ export const Navbar = () => {
       <div className="w-full flex items-center justify-between px-16 tb:px-8 py-3 bg-white/20 backdrop-blur-md border-b-[1.4px] border-zinc-300 fixed z-50">
         {/* Logo & Title */}
         <div className="flex items-center">
-         <Link to="Home" className="flex text-xl items-center"> <img src={logo} className="w-10" alt="Logo" />
-      MovaFlix</Link>
+         <NavLink to="/" className="flex text-xl items-center"> <img src={logo} className="w-10" alt="Logo" />
+      MovaFlix</NavLink>
         </div>
 
         {/* Desktop Navigation */}
         <div className="flex gap-5 items-center vlm:hidden">
-          <Link className="text-lg cursor-pointer" to="Features">Features</Link>
-          <Link className="text-lg cursor-pointer" to="Contact">Contact Us</Link>
-          <Link className="border-[1.5px] border-zinc-300 hover:border-zinc-600 duration-500 p-3 rounded-lg">
+          <a href="#Features" className="text-lg cursor-pointer" >Features</a>
+          <a href="#Contact" className="text-lg cursor-pointer">Contact Us</a>
+          <a className="border-[1.5px] border-zinc-300 hover:border-zinc-600 duration-500 p-3 rounded-lg">
             Download App
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -46,16 +46,16 @@ export const Navbar = () => {
 
         {/* Sidebar Links */}
         <div className="flex text-white flex-col items-start mt-16 pl-6 space-y-6 text-lg">
-          <Link to="/" className="hover:text-red-500 cursor-pointer" onClick={() => setSidebarOpen(false)}>Home</Link>
-          <Link to="/features" className="hover:text-red-500 cursor-pointer" onClick={() => setSidebarOpen(false)}>Features</Link>
-          <Link to="/about" className="hover:text-red-500 cursor-pointer" onClick={() => setSidebarOpen(false)}>About</Link>
-          <Link to="/contact" className="hover:text-red-500 cursor-pointer" onClick={() => setSidebarOpen(false)}>Contact Us</Link>
-          <Link
+          <a href="#Home" className="hover:text-red-500 cursor-pointer" onClick={() => setSidebarOpen(false)}>Home</a>
+          <a href="#Features" className="hover:text-red-500 cursor-pointer" onClick={() => setSidebarOpen(false)}>Features</a>
+          <a href="#About" className="hover:text-red-500 cursor-pointer" onClick={() => setSidebarOpen(false)}>About</a>
+          <a href="#Contact" className="hover:text-red-500 cursor-pointer" onClick={() => setSidebarOpen(false)}>Contact Us</a>
+          <a
             className="border-[1.5px] border-zinc-300 hover:border-zinc-600 duration-500 p-3 rounded-lg"
             onClick={() => setSidebarOpen(false)}
           >
             Download App
-          </Link>
+          </a>
         </div>
       </div>
 

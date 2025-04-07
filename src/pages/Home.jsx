@@ -1,8 +1,14 @@
 import banner from '../assets/ddfb070b-26d2-4ae4-a4a9-be5063be899b.webp';
+import { About } from './About';
+import ContactUs from './Contact';
+import { Demo } from './Demo';
+import { Features } from './Features';
 
 export const Home = () => {
   return (
-    <div id="Home" className="flex items-center justify-center min-h-screen bg-gray-100">
+    <>
+
+<div id="Home" className="flex items-center justify-center min-h-screen bg-gray-100">
       {/* Main Container */}
       <div className="w-[92%] tb:w-[95%] lm:pt-20 flex tb:flex-row items-center vlm:flex-col lm:w-full lm:py-10 lm:min-h-[90vh] h-[95%] mx-auto">
         
@@ -27,5 +33,12 @@ export const Home = () => {
         
       </div>
     </div>
+
+    <Features/>
+    <Demo/>
+    <About/>
+    <ContactUs/>
+
+    </>
   );
 };
